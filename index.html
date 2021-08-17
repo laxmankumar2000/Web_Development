@@ -10,8 +10,18 @@
 </head>
 <body>
 
-    <script src="./JavaScript/jquery.min.js"></script>
+    <script src="./JavaScript/jquery.min.js">
+    </script>
 
+    <script src="./JavaScript/slider.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){$curtainopen=!1,$(".rope").click(function(){return $(this).blur(),0==$curtainopen?($(this).stop().animate({top:"-171%"},
+        {queue:!1,duration:350,easing:"easeOutBounce"}),$(".leftcurtain").stop().animate({width:"1px"},2e3),$(".rightcurtain").stop().animate({width:"1px"},2e3),
+        $curtainopen=!0):($(this).stop().animate({top:"-40px"},{queue:!1,duration:350,easing:"easeOutBounce"}),$(".leftcurtain").stop().animate({width:"50%"},2e3),
+        $(".rightcurtain").stop().animate({width:"51%"},2e3),$curtainopen=!1),!1})});
+     </script>
+    
+    
     <!-- <Script> for Audio Funcyion</Script> -->
     <script>
         function play(){
@@ -19,6 +29,7 @@
               audio.play();
         }
     </script>
+    
 
 
     <audio id="audio" src="./Assests/a.mp3"></audio>
@@ -30,9 +41,9 @@
         </div>
     </a>
 
-    <!-- <div class="leftcurtain"><img src="C:\Users\Laxman kumar vashist\Desktop\Web Developent\Independent day\media\parda212.jpg"></div>
-    <div class="rightcurtain"><img src="C:\Users\Laxman kumar vashist\Desktop\Web Developent\Independent day\media\parda212.jpg"></div>
-     -->
+    <div class="leftcurtain"><img src="./Assests/parda212.jpg"></div>
+    <div class="rightcurtain"><img src="./Assests/parda212.jpg"></div>
+    
     <marquee class="m1" behavior="scroll" direction="up" scrolldelay="0"> <br>
         <img src="./Assests/1.png" style="height: 40px; width: 30px;"><br><br>
         <img src="./Assests/1.png" style="height: 40px; width: 30px;"><br><br>
@@ -117,7 +128,7 @@
 
 
     <!-- Main Container -->
-    <div class="mainContainer">
+    <div class="mainContainer" style="background-image: url(./Assests/parda212.jpg);">
 
         <div style="animation: swing 4s infinite;">
             <h1 style="-webkit-text-stroke: 1px black; color: white; 
@@ -129,10 +140,20 @@
             <img src="./Assests/kiTarafSe.png" style="width: 60%;">
         </h3>
 
+        <div class="animated" > animated</div>
+
+        <div style="font-size: 10px; font-weight: 550; color: black;">
+        <p id="demo"></p>
+        </div>
+
         <img  src="./Assests/main.png" style="width: 90%; animation: pulse 2s infinite;" >
 
         <br>
         <img src="./Assests/ram.png" style="width: 90%; animation: swing 4s infinite;">
+
+        <div class="pulse">
+            <img src="./Assests/main.png" style="width: 90%;" alt="">
+        </div>
 
 
         <div class="wishMessage" >
@@ -164,22 +185,14 @@
 
     <form method="POST" action="ready.php">
         <div class="enter-name">
-            <input class="animated pulse infinite" type="name" required maxlength="50" name="n" placeholder="👉 यहाँ अपना नाम लिखें...">
-            <button class="btn animated shake infinite" type="submit"><span>👉 देखें </span></button>
+            <input  class ="animated" style="animation: pulse 2s infinite;" type="name" required maxlength="50" name="n" placeholder="👉 यहाँ अपना नाम लिखें...">
+            <button class="btn" style="animation: shake 4s infinite" type="submit"><span>👉 देखें </span></button>
         </div>
     </form>
 
-
-    
-
-    <!-- <p><img src="Web Developent\Independent day\media\parda212.jpg"></p> -->
-
-
-
-
-
-    <!-- <p>
-<audio src="C:\Users\Laxman kumar vashist\Desktop\a.mp3"></audio> vv</p> -->
-    
+    <script> 
+        var countDownDate=new Date("August 15 , 2021 00:00:00").getTime(),x=setInterval(function(){var e=(new Date).getTime(),o=countDownDate-e,t=Math.floor(o/864e5),n=Math.floor(o%864e5/36e5),a=Math.floor(o%36e5/6e4),l=Math.floor(o%6e4/1e3);document.getElementById("demo").innerHTML=""+t+"<font color='black'> दिन,</font> "+n+"<font color='black'> घंटे,</font> "+a+"<font color='black'>  मिनट,<br></font> "+l+"<font color='black'> सेकंड </font> <font color='green'>,पहले</font>",o<0&&(clearInterval(x),document.getElementById("demo").innerHTML="")},1e3);      
+        </script>
+       
 </body>
 </html>
